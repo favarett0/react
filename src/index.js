@@ -1,17 +1,22 @@
+// Importa as bibliotecas principais do React
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+// Importa o componente principal da aplicação
+import App from './App';
+
+// Importa o CSS global (opcional)
+import './styles.css';
+
+// 1 Seleciona a <div id="root"> dentro do index.html
+const rootElement = document.getElementById("root");
+
+//  Cria a raiz React (ponto de montagem)
+const root = ReactDOM.createRoot(rootElement);
+
+// 3Renderiza o App dentro do React.StrictMode (ajuda a detectar erros e boas práticas)
 root.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
