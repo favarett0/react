@@ -16,6 +16,7 @@
     font-size: 12px;
   }
   
+
   /* Container principal da aplicação */
   .app {
     display: flex;             /* Usa flexbox para organização vertical */
@@ -23,8 +24,13 @@
     align-items: center;       /* Centraliza os itens na horizontal */
     padding-bottom: 80px;      /* Espaço reservado para o rodapé fixo */
   }
-  
- 
+    .App-logo{
+      justify-content: flex-start;
+      width: 50px;
+      height: 50px;
+    
+     }
+   
   
   /* Estilo do menu principal de navegação */
   .menu-principal {

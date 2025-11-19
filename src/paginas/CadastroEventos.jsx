@@ -1,14 +1,17 @@
 import React, { useState } from "react";
+import "../paginas/cadastroEventos.css";
+import {useNavigate} from "react-router-dom"; //adicionado
 
 function CadastroEvento({ onCadastrar }) {
   // Estados dos campos do formulário
   const [nome, setNome] = useState("");
   const [data, setData] = useState("");
   const [local, setLocal] = useState("");
+  const navigate = useNavigate(); //adicionado 
 
 
   function Enviar(e) {
-    e.preventDefault();
+    e.preventDefault(); // metodo do react
 
     // Objeto com dados do evento
     const novoEvento = {
@@ -16,8 +19,7 @@ function CadastroEvento({ onCadastrar }) {
       nome,
       data,
       local,
-    
-    };
+        };
 
     // Envia o evento para o componente pai
     onCadastrar(novoEvento);
@@ -57,8 +59,11 @@ function CadastroEvento({ onCadastrar }) {
           onChange={(e) => setLocal(e.target.value)}
           required
         />
-         <button type="submit" className="btn-salvar">  Salvar Evento</button>
-        <button type="submit" className="btn-salvar">  Voltar  </button>
+        <div className="botoes">
+          <button type="submit" className="btn-salvar">  Salvar Evento</button>
+          <button type="button" className="btn-voltar" onClick={() => navigate("/")}> Voltar  </button>
+         </div>
+      
       </form>
     </div>
   );
